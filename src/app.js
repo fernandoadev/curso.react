@@ -3,9 +3,9 @@
 import React from 'react'
 
 var Title = React.createClass({
-    render: function () {
-        return React.createElement('h1', null, 'Titulo')
-    }
+  render: function () {
+    return <h1>Título</h1>
+  }
 })
 
 export default Title

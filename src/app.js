@@ -1,11 +1,29 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
+//import Title from './title'
+import Square from './square'
 
-var Title = React.createClass({
-  render: function () {
-    return <h1>Título</h1>
+/* Componente usando classe do ES06*/
+class App extends Component {
+  render() {
+    return (
+      <div>
+        {['blue', 'red', 'green'].map((square) => (
+          <Square key={square} color={square} />
+        ))}
+      </div>
+    )
   }
-})
+}
 
-export default Title
+/* Componente usando createClass do react do ES05*/
+// var App = React.createClass({
+//   render: function () {
+//     return <div>
+//       <Title name="Fernando" lastName="de Almeida" />
+//     </div>
+//   }
+// })
+
+export default App

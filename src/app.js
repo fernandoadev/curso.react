@@ -3,15 +3,19 @@
 import React, { Component } from 'react'
 //import Title from './title'
 import Square from './square'
-
+import Button from './button'
 /* Componente usando classe do ES06*/
 class App extends Component {
   render() {
     return (
-      <div>
-        {['blue', 'red', 'green'].map((square) => (
-          <Square key={square} color={square} />
+      <div onClick={(e) => {
+        alert('eae');
+      }} className='container'>
+        {['blue', 'red', 'green'].map((square, index) => (
+          <Square key={index} color={square} />
         ))}
+
+        <Button>Texto</Button>
       </div>
     )
   }

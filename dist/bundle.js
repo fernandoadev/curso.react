@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3a64e4f6a937d20c9c10"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b3ece6423cbed52cd19c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -586,7 +586,9 @@
 	__webpack_require__(1);
 	__webpack_require__(191);
 	__webpack_require__(263);
-	module.exports = __webpack_require__(265);
+	__webpack_require__(265);
+	(function webpackMissingModule() { throw new Error("Cannot find module \"dev\""); }());
+	(function webpackMissingModule() { throw new Error("Cannot find module \"serve\""); }());
 
 
 /***/ }),
@@ -40836,27 +40838,60 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(6);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _title = __webpack_require__(434);
+	var _square = __webpack_require__(434);
 	
-	var _title2 = _interopRequireDefault(_title);
+	var _square2 = _interopRequireDefault(_square);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var App = _react2.default.createClass({
-	  displayName: 'App',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement('title', null)
-	    );
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	//import Title from './title'
+	
+	
+	/* Componente usando classe do ES06*/
+	var App = function (_Component) {
+	  _inherits(App, _Component);
+	
+	  function App() {
+	    _classCallCheck(this, App);
+	
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        ['blue', 'red', 'green'].map(function (square, index) {
+	          return _react2.default.createElement(_square2.default, { key: index, color: square });
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return App;
+	}(_react.Component);
+	
+	/* Componente usando createClass do react do ES05*/
+	// var App = React.createClass({
+	//   render: function () {
+	//     return <div>
+	//       <Title name="Fernando" lastName="de Almeida" />
+	//     </div>
+	//   }
+	// })
 	
 	var _default = App;
 	exports.default = _default;
@@ -40890,19 +40925,19 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Title = React.createClass({
-	  displayName: 'Title',
+	var Square = function Square(_ref) {
+	  var color = _ref.color;
+	  return _react2.default.createElement('div', { style: {
+	      height: '100px',
+	      width: '100px',
+	      background: color
+	    } });
+	};
 	
-	  render: function render() {
-	    return React.createElement(
-	      'h1',
-	      null,
-	      'Ola Fernando!'
-	    );
-	  }
-	});
-	
-	var _default = Title;
+	Square.defaultProps = {
+	  color: 'red'
+	};
+	var _default = Square;
 	exports.default = _default;
 	;
 	
@@ -40911,9 +40946,9 @@
 	    return;
 	  }
 	
-	  __REACT_HOT_LOADER__.register(Title, 'Title', 'C:/Users/Fernando/Documents/code/curso_react/src/title.js');
+	  __REACT_HOT_LOADER__.register(Square, 'Square', 'C:/Users/Fernando/Documents/code/curso_react/src/square.js');
 	
-	  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Fernando/Documents/code/curso_react/src/title.js');
+	  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Fernando/Documents/code/curso_react/src/square.js');
 	})();
 
 	;
